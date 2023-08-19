@@ -44,7 +44,7 @@ app.post("/login", async (req,res)=>{
 const {name,email}=req.body;
 const user= await User.create({name:name,email:email});    
 // jwt use now for unique token_value
-const uniqueToken=jwt.sign({_id:user._id},"kuchsecretmsg");
+const uniqueToken=jwt.sign({_id:user._id},"kuchsecretmsg");+
 res.cookie("token",uniqueToken,{
     expires:new Date(Date.now()+60*1000)
 })
